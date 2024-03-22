@@ -18,3 +18,20 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+// ketika ingin me require seluruh file dengan extensi PHP di dalam direktori "website"
+Route::prefix('website')->group(function() {
+    $dirIterator = new RecursiveDirectoryIterator(__DIR__.'/website');
+    $it = new RecursiveIteratorIterator($dirIterator);
+
+    while ($it->valid()) {
+        if (!$it->isDot() 
+            && $it->isFile() 
+            && $it->isReadable() 
+            && $it->getExtension() === 'php') {
+                require $it->current();
+            }
+        $it->next();
+    }
+});
