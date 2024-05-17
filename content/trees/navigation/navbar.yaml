@@ -1,0 +1,9 @@
+tree:
+  -
+    id: 8d7b1bcd-66af-4f78-828e-c5ad700bbcae
+    title: Home
+    url: /
+  -
+    id: e9b155f3-e9d7-46d3-9f3a-562e99f0510c
+    title: Articles
+    url: /articles

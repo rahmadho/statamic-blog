@@ -1,0 +1,144 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: sub_title
+            field:
+              buttons:
+                - bold
+                - italic
+                - removeformat
+                - anchor
+                - strikethrough
+                - small
+                - aligncenter
+              save_html: true
+              toolbar_mode: floating
+              remove_empty_nodes: false
+              type: bard
+              display: 'Sub Title'
+          -
+            handle: content
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - underline
+                - codeblock
+                - horizontalrule
+                - aligncenter
+              save_html: true
+              remove_empty_nodes: false
+              container: images
+              type: bard
+              display: Content
+              sets:
+                embed:
+                  display: Embed
+                  icon: programming-script-code
+                  sets:
+                    partial:
+                      display: Partial
+                      icon: layout-table-row-insert
+                      fields:
+                        -
+                          handle: template
+                          field:
+                            hide_partials: false
+                            folder: partials
+                            type: template
+                            display: Template
+                    hero:
+                      display: Hero
+                      icon: align-left
+                      fields:
+                        -
+                          import: hero_image
+                    slider:
+                      display: Slider
+                      icon: media-image-picture-gallery
+                      fields:
+                        -
+                          handle: sliders
+                          field:
+                            type: grid
+                            display: Sliders
+                            fields:
+                              -
+                                handle: image
+                                field:
+                                  max_files: 1
+                                  min_files: 1
+                                  container: images
+                                  type: assets
+                                  display: Image
+                              -
+                                handle: title
+                                field:
+                                  type: text
+                                  display: Title
+                              -
+                                handle: url
+                                field:
+                                  input_type: url
+                                  default: '#'
+                                  type: text
+                                  display: URL
+      -
+        display: SEO
+        instructions: 'Search Engine Optimization'
+        fields:
+          -
+            import: seo_metadata
+            prefix: metadata_
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: featured_image
+            field:
+              max_files: 1
+              min_files: 1
+              container: images
+              type: assets
+              display: 'Featured Image'
+              instructions: 'Set the featured image for this content'
+              validate:
+                - image
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
+title: Page

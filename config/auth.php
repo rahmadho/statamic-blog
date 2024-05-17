@@ -97,6 +97,17 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+
+        /**
+         * Tambahan pengaturan untuk Statamic
+         */
+        'activations' => [
+            'provider' => 'users',
+            'table' => 'password_activation_tokens',
+            'expire' => 4320,
+            'throttle' => 60,
+        ],
+        
     ],
 
     /*

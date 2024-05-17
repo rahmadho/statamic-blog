@@ -1,0 +1,14 @@
+title: Announcements
+template: templates/post
+layout: layout
+revisions: false
+route: '{parent_uri}/announcement/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true

@@ -1,0 +1,20 @@
+title: 'SEO Metadata'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: 'Meta Title'
+      instructions: 'The title should be descriptive and relevant to the content of the page, and should include the primary keywords for which the page is being optimized'
+  -
+    handle: description
+    field:
+      type: text
+      display: 'Meta Description'
+      instructions: 'A brief summary of the content of the webpage'
+  -
+    handle: keywords
+    field:
+      type: taggable
+      display: 'Meta Keywords'
+      instructions: "These tags list relevant keywords or phrases that are related to your page's content"

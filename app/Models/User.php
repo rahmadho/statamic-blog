@@ -45,12 +45,8 @@ class User extends Authenticatable
         ];
     }
 
-
-    // relationship
-    function projects() {
-        return $this->hasMany(Project::class);
-    }
-    function tasks() {
-        return $this->hasMany(Task::class);
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new \Statamic\Notifications\PasswordReset($token));
     }
 }

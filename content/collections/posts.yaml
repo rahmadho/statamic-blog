@@ -1,0 +1,21 @@
+title: Posts
+template: templates/post
+layout: layout
+taxonomies:
+  - categories
+  - tags
+revisions: false
+route: '{parent_uri}/post/{slug}'
+slugs: false
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+structure:
+  root: false
+  slugs: true

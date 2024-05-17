@@ -1,0 +1,15 @@
+title: 'Link Button'
+fields:
+  -
+    handle: link_label
+    field:
+      type: text
+      display: 'Link Label'
+      width: 50
+  -
+    handle: link_url
+    field:
+      input_type: url
+      type: text
+      display: 'Link URL'
+      width: 50

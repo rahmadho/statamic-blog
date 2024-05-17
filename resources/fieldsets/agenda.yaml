@@ -1,0 +1,39 @@
+title: Agenda
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      validate:
+        - required
+  -
+    handle: date_start
+    field:
+      time_enabled: true
+      type: date
+      display: 'Date Start'
+      width: 50
+      validate:
+        - required
+  -
+    handle: date_end
+    field:
+      time_enabled: true
+      type: date
+      display: 'Date End'
+      width: 50
+      validate:
+        - required
+  -
+    handle: location
+    field:
+      type: text
+      display: Location
+      width: 50
+  -
+    handle: address
+    field:
+      type: text
+      display: Address
+      width: 50

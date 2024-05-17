@@ -1,0 +1,52 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            import: agenda
+            config:
+              title:
+                required: true
+          -
+            handle: attach_file
+            field:
+              max_files: 1
+              min_files: 1
+              container: documents
+              folder: pdf
+              restrict: true
+              type: assets
+              display: 'Attach File (Pdf)'
+      -
+        display: 'New Section'
+        fields:
+          -
+            import: seo_metadata
+            prefix: metadata_
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: author
+            field:
+              max_items: 1
+              type: users
+              display: Author
+              visibility: hidden
+          -
+            handle: created_at
+            field:
+              type: date
+              display: 'Created At'
+              visibility: hidden
+title: Agenda

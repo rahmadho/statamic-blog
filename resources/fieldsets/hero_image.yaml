@@ -1,0 +1,22 @@
+title: 'Hero Image Section'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: subtitle
+    field:
+      type: textarea
+      display: Subtitle
+  -
+    import: link_button
+  -
+    handle: image
+    field:
+      max_files: 1
+      min_files: 1
+      container: images
+      type: assets
+      display: Image

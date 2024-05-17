@@ -1,0 +1,155 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: content
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - table
+                - underline
+                - small
+                - superscript
+                - subscript
+                - code
+                - codeblock
+                - horizontalrule
+                - alignleft
+                - aligncenter
+                - alignright
+                - alignjustify
+                - image
+              remove_empty_nodes: false
+              type: bard
+              display: Content
+              container: images
+              save_html: true
+              sets:
+                embed:
+                  display: Embed
+                  instructions: 'Embed video or media from other sites'
+                  icon: media-image-photo-focus-frame
+                  sets:
+                    embed_video:
+                      display: 'Embed Video'
+                      instructions: 'Embeding video'
+                      icon: media-webcam-video
+                      fields:
+                        -
+                          handle: video_url
+                          field:
+                            type: video
+                            display: 'Video URL'
+                related_post:
+                  display: 'Related Post'
+                  icon: media-news-paper
+                  sets:
+                    related_posts:
+                      display: 'Related Posts'
+                      fields:
+                        -
+                          handle: posts
+                          field:
+                            create: false
+                            type: entries
+                            display: Posts
+          -
+            handle: summary
+            field:
+              character_limit: '250'
+              type: textarea
+              display: Summary
+              instructions: 'Summarize the content'
+      -
+        display: SEO
+        instructions: 'Search Engine Optimization'
+        fields:
+          -
+            import: seo_metadata
+            prefix: metadata_
+      -
+        display: Gallery
+        instructions: 'Add images to create gallery for this post'
+        fields:
+          -
+            handle: image
+            field:
+              container: images
+              type: assets
+              display: Image
+              hide_display: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: created_at
+            field:
+              time_enabled: true
+              time_seconds_enabled: true
+              type: date
+              display: 'Created At'
+              instructions: 'Set date when the post created'
+              visibility: hidden
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: template
+            field:
+              folder: templates
+              type: template
+              display: Template
+              instructions: 'Set template for this content'
+              visibility: hidden
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              visibility: hidden
+              max_items: 1
+          -
+            handle: featured_image
+            field:
+              max_files: 1
+              min_files: 1
+              container: images
+              type: assets
+              display: 'Featured Image'
+              instructions: 'Set featured image for this post'
+              validate:
+                - required
+              mode: grid
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - posts
+              max_items: 1
+              listable: false
+              localizable: true
+title: Post
