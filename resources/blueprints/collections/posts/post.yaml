@@ -79,13 +79,6 @@ tabs:
               display: Summary
               instructions: 'Summarize the content'
       -
-        display: SEO
-        instructions: 'Search Engine Optimization'
-        fields:
-          -
-            import: seo_metadata
-            prefix: metadata_
-      -
         display: Gallery
         instructions: 'Add images to create gallery for this post'
         fields:
@@ -152,4 +145,30 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+          -
+            handle: categories
+            field:
+              type: terms
+              taxonomies:
+                - categories
+              display: Categories
+              mode: select
+          -
+            handle: tags
+            field:
+              type: terms
+              taxonomies:
+                - tags
+              display: Tags
+              mode: select
+  seo:
+    display: SEO
+    sections:
+      -
+        display: SEO
+        instructions: 'Search Engine Optimization'
+        fields:
+          -
+            import: seo_metadata
+            prefix: metadata_
 title: Post

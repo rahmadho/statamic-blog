@@ -31,27 +31,47 @@ tabs:
             handle: content
             field:
               buttons:
-                - h2
-                - h3
-                - bold
-                - italic
-                - unorderedlist
-                - orderedlist
-                - removeformat
-                - quote
-                - anchor
                 - image
-                - table
-                - underline
-                - codeblock
-                - horizontalrule
-                - aligncenter
               save_html: true
               remove_empty_nodes: false
               container: images
               type: bard
               display: Content
               sets:
+                bard:
+                  display: Bard
+                  icon: content-book-open
+                  sets:
+                    bard:
+                      display: Bard
+                      icon: content-book-open
+                      fields:
+                        -
+                          handle: content
+                          field:
+                            buttons:
+                              - h2
+                              - h3
+                              - bold
+                              - italic
+                              - unorderedlist
+                              - orderedlist
+                              - removeformat
+                              - quote
+                              - anchor
+                              - image
+                              - table
+                              - underline
+                              - small
+                              - alignleft
+                              - aligncenter
+                              - alignright
+                              - alignjustify
+                            save_html: true
+                            toolbar_mode: floating
+                            remove_empty_nodes: false
+                            type: bard
+                            display: Content
                 embed:
                   display: Embed
                   icon: programming-script-code
@@ -103,13 +123,6 @@ tabs:
                                   default: '#'
                                   type: text
                                   display: URL
-      -
-        display: SEO
-        instructions: 'Search Engine Optimization'
-        fields:
-          -
-            import: seo_metadata
-            prefix: metadata_
   sidebar:
     display: Sidebar
     sections:
@@ -141,4 +154,14 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+  seo:
+    display: SEO
+    sections:
+      -
+        display: SEO
+        instructions: 'Search Engine Optimization'
+        fields:
+          -
+            import: seo_metadata
+            prefix: metadata_
 title: Page

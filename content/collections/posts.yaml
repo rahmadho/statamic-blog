@@ -1,11 +1,12 @@
 title: Posts
 template: templates/post
 layout: layout
+mount: 7eb823e5-0894-498f-8a6a-eeb1ceff8bfb
 taxonomies:
   - categories
   - tags
 revisions: false
-route: '{parent_uri}/post/{slug}'
+route: '{mount}/{slug}'
 slugs: false
 sort_dir: asc
 date_behavior:

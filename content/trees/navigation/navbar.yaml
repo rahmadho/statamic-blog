@@ -5,5 +5,13 @@ tree:
     url: /
   -
     id: e9b155f3-e9d7-46d3-9f3a-562e99f0510c
-    title: Articles
-    url: /articles
+    title: Article
+    url: /article
+  -
+    id: 652e5393-33ce-424a-8a41-129ab5f90685
+    title: About
+    url: /about
+  -
+    id: 4d65532d-5e48-49c6-83b7-686f7095d752
+    title: 'Contat Us'
+    url: /contact-us

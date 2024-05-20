@@ -2,8 +2,12 @@
     <x-slot:title>{{$page->title}}</x-slot:title>
     <main id="main" class="flex flex-col items-center">
         @foreach ($page->content as $content)
-            @if ($content->type == 'text')
-                {!! $content->text !!}
+            @if ($content->type == 'bard')
+                <div class="w-full bg-white dark:bg-gray-900">
+                    <div class="max-w-screen-xl mx-auto p-4">
+                        {!! $content->content !!}
+                    </div>
+                </div>
             @elseif($content->type == 'slider')
                 <x-slot:styles>
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
